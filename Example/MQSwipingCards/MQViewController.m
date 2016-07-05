@@ -56,19 +56,19 @@
 
 #pragma mark - MQSwipingCardsViewDelegate
 
-- (void)swipingCardViewDidCancelSwiping:(MQSwipingCardsView *)view {
+- (void)swipingCardsViewDidCancelSwiping:(MQSwipingCardsView *)view {
     NSLog(@"Cancel!");
 }
 
-- (void)swipingCardView:(MQSwipingCardsView *)view
-     swipingCardAtIndex:(NSUInteger)index
-           withPosition:(CGPoint)position {
+- (void)swipingCardsView:(MQSwipingCardsView *)view
+      swipingCardAtIndex:(NSUInteger)index
+            withPosition:(CGPoint)position {
     NSLog(@"Swiping card number %lu, now in position (%f - %f)", index, position.x, position.y);
 }
 
-- (void)swipingCardView:(MQSwipingCardsView *)view
-    didSwipeCardAtIndex:(NSUInteger)index
-            inDirection:(MQSwipingCardsViewDirection)direction {
+- (void)swipingCardsView:(MQSwipingCardsView *)view
+     didSwipeCardAtIndex:(NSUInteger)index
+             inDirection:(MQSwipingCardsViewDirection)direction {
     NSLog(@"Swiped card number %lu to direction %lu", index, direction);
 }
 

@@ -27,7 +27,7 @@
 #pragma mark - Lifecycle
 
 - (instancetype)initWithFrame:(CGRect)frame {
-
+    
     if (self = [super initWithFrame:frame]) {
         [self setupView];
     }
@@ -36,7 +36,7 @@
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
-
+    
     if (self = [super initWithCoder:aDecoder]) {
         [self setupView];
     }
@@ -45,7 +45,7 @@
 }
 
 - (void)setupView {
-
+    
     _index = 0;
     _throwingTreshold = 600;
     
@@ -86,14 +86,14 @@
 #pragma mark - Public
 
 - (UIView *)cardAtIndex:(NSUInteger)index {
-
+    
     return [self.cardViews objectAtIndex:index];
 }
 
 - (void)swipeCardToDirection:(MQSwipingCardsViewDirection)direction {
     
     NSLog(@"Swipe to %lu", (unsigned long)direction);
-
+    
     [UIView animateWithDuration:0.4
                           delay:0.0
          usingSpringWithDamping:0.8
@@ -109,7 +109,7 @@
 }
 
 - (CGPoint)cardRunUpPositionForDirection:(MQSwipingCardsViewDirection)direction {
-
+    
     UIView *card = [self currentCardView];
     CGPoint cardPosition = card.center;
     CGFloat runUpDistance = card.frame.size.width / 5.0;
@@ -135,7 +135,7 @@
 }
 
 - (CGPoint)cardVelocityForDirection:(MQSwipingCardsViewDirection)direction {
-
+    
     CGRect windowBounds = self.window.bounds;
     CGFloat xVelocity = 0.0;
     CGFloat yVelocity = 0.0;
@@ -260,7 +260,7 @@
 }
 
 - (void)handlePushBehaviourAction {
-
+    
     UIView *currentCard = [self currentCardView];
     
     if ([self isCardOutOfTheWindow:currentCard]) {
@@ -275,8 +275,8 @@
             [currentCard removeFromSuperview];
             
             [self.delegate swipingCardsView:self
-                            didSwipeCardAtIndex:self.index
-                                    inDirection:direction];
+                        didSwipeCardAtIndex:self.index
+                                inDirection:direction];
             
             NSUInteger numberOfCards = [_dataSource numberOfCardsInSwipingCardsView:self];
             
@@ -331,9 +331,9 @@
             break;
         case UIGestureRecognizerStateChanged:
             [self.attachmentBehavior setAnchorPoint:locationInView];
-            [self.delegate swipingCardView:self
-                        swipingCardAtIndex:self.index
-                              withPosition:locationInView];
+            [self.delegate swipingCardsView:self
+                         swipingCardAtIndex:self.index
+                               withPosition:locationInView];
             break;
         case UIGestureRecognizerStateEnded:
         case UIGestureRecognizerStateCancelled:

@@ -11,7 +11,7 @@
 @implementation MQAutolayoutHelper
 
 + (void)keepAspectRatioForView:(UIView *)view {
-
+    
     NSLayoutConstraint *aspectRationConstraint = [NSLayoutConstraint
                                                   constraintWithItem:view
                                                   attribute:NSLayoutAttributeWidth
@@ -24,7 +24,7 @@
 }
 
 + (void)keepView:(UIView *)view insideSuperview:(UIView *)superview {
-
+    
     CGFloat viewWidth = view.frame.size.width;
     
     NSDictionary *views = @{@"view": view};
@@ -44,13 +44,13 @@
 }
 
 + (void)centerView:(UIView *)view insideSuperview:(UIView *)superview {
-
+    
     [[self class] centerView:view horizontallyInsideSuperview:superview];
     [[self class] centerView:view verticallyInsideSuperview:superview];
 }
 
 + (void)centerView:(UIView *)view horizontallyInsideSuperview:(UIView *)superview {
-
+    
     NSLayoutConstraint *centerXConstraints = [NSLayoutConstraint constraintWithItem:view
                                                                           attribute:NSLayoutAttributeCenterX
                                                                           relatedBy:NSLayoutRelationEqual
@@ -61,7 +61,7 @@
 }
 
 + (void)centerView:(UIView *)view verticallyInsideSuperview:(UIView *)superview {
-
+    
     NSLayoutConstraint *centerYConstraints = [NSLayoutConstraint constraintWithItem:view
                                                                           attribute:NSLayoutAttributeCenterY
                                                                           relatedBy:NSLayoutRelationEqual

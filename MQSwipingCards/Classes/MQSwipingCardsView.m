@@ -75,12 +75,20 @@
     
     for (int i = (int)fromIndex; i < toIndex; i++) {
         UIView *cardView = [self.dataSource swipingCardsView:self cardAtIndex:i];
-        [self.cardViews addObject:cardView];
-        [self setupCardView:cardView forIndex:i];
+        
+        if (cardView) {
+            [self.cardViews addObject:cardView];
+            [self setupCardView:cardView forIndex:i];
+        }
     }
 }
 
 #pragma mark - Public
+
+- (UIView *)cardAtIndex:(NSUInteger)index {
+
+    return [self.cardViews objectAtIndex:index];
+}
 
 - (void)swipeCardToDirection:(MQSwipingCardsViewDirection)direction {
     
@@ -220,7 +228,7 @@
             [weakSelf handlePushBehaviourAction];
         };
     } else {
-        [self.delegate swipingCardViewDidCancelSwiping:self];
+        [self.delegate swipingCardsViewDidCancelSwiping:self];
         [self resetCard];
     }
 }
@@ -266,7 +274,7 @@
             [self.animator removeAllBehaviors];
             [currentCard removeFromSuperview];
             
-            [self.delegate swipingCardView:self
+            [self.delegate swipingCardsView:self
                             didSwipeCardAtIndex:self.index
                                     inDirection:direction];
             
@@ -281,7 +289,7 @@
             [self addPanGestureToView:[self currentCardView] withSelector:@selector(moveCard:)];
             
         } else {
-            [self.delegate swipingCardViewDidCancelSwiping:self];
+            [self.delegate swipingCardsViewDidCancelSwiping:self];
             [self resetCard];
         }
     }

@@ -33,6 +33,7 @@ typedef NS_ENUM(NSUInteger, MQSwipingCardsViewDirection) {
 @property (weak, nonatomic) id<MQSwipingCardsViewDataSource> dataSource;
 @property (weak, nonatomic) id<MQSwipingCardsViewDelegate> delegate;
 
+- (UIView *)cardAtIndex:(NSUInteger)index;
 - (void)swipeCardToDirection:(MQSwipingCardsViewDirection)direction;
 
 @end
@@ -46,12 +47,12 @@ typedef NS_ENUM(NSUInteger, MQSwipingCardsViewDirection) {
 
 @protocol MQSwipingCardsViewDelegate
 
-- (void)swipingCardViewDidCancelSwiping:(MQSwipingCardsView *)view;
-- (void)swipingCardView:(MQSwipingCardsView *)view
-          swipingCardAtIndex:(NSUInteger)index
-                withPosition:(CGPoint)position;
-- (void)swipingCardView:(MQSwipingCardsView *)view
-         didSwipeCardAtIndex:(NSUInteger)index
-                 inDirection:(MQSwipingCardsViewDirection)direction;
+- (void)swipingCardsViewDidCancelSwiping:(MQSwipingCardsView *)view;
+- (void)swipingCardsView:(MQSwipingCardsView *)view
+      swipingCardAtIndex:(NSUInteger)index
+            withPosition:(CGPoint)position;
+- (void)swipingCardsView:(MQSwipingCardsView *)view
+     didSwipeCardAtIndex:(NSUInteger)index
+             inDirection:(MQSwipingCardsViewDirection)direction;
 
 @end

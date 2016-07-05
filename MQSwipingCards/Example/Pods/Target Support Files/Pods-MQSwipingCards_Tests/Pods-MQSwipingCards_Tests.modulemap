@@ -1,0 +1,6 @@
+framework module Pods_MQSwipingCards_Tests {
+  umbrella header "Pods-MQSwipingCards_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

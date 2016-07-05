@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'MQSwipingCards_Example' do
+  pod 'MQSwipingCards', :path => '../'
+
+  target 'MQSwipingCards_Tests' do
+    inherit! :search_paths
+
+    pod 'FBSnapshotTestCase'
+  end
+end

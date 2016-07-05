@@ -1,0 +1,6 @@
+framework module MQSwipingCards {
+  umbrella header "MQSwipingCards-umbrella.h"
+
+  export *
+  module * { export * }
+}

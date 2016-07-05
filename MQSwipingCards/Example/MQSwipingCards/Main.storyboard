@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="whP-gf-Uak">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="wQg-tq-qST">
+            <objects>
+                <viewController id="whP-gf-Uak" customClass="MQViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uEw-UM-LJ8"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mvr-aV-6Um"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JPD-1I-JFK" customClass="MQSwipingCardsView">
+                                <rect key="frame" x="70" y="65" width="460" height="475"/>
+                                <color key="backgroundColor" red="0.91378630050505039" green="0.91378630050505039" blue="0.91378630050505039" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYF-r3-0Wv">
+                                <rect key="frame" x="70" y="541" width="38" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Left"/>
+                                <connections>
+                                    <action selector="leftButtonPressed:" destination="whP-gf-Uak" eventType="touchUpInside" id="zCF-ta-eoP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RE4-LK-2y5">
+                                <rect key="frame" x="483" y="544" width="47" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Right"/>
+                                <connections>
+                                    <action selector="rightButtonPressed:" destination="whP-gf-Uak" eventType="touchUpInside" id="trV-9m-9i9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RE4-LK-2y5" firstAttribute="trailing" secondItem="JPD-1I-JFK" secondAttribute="trailing" id="7Qi-rR-qYW"/>
+                            <constraint firstItem="JPD-1I-JFK" firstAttribute="top" secondItem="uEw-UM-LJ8" secondAttribute="bottom" constant="45" id="G0l-df-tEu"/>
+                            <constraint firstItem="RE4-LK-2y5" firstAttribute="baseline" secondItem="hYF-r3-0Wv" secondAttribute="baseline" id="I3w-Ws-Pcr"/>
+                            <constraint firstItem="Mvr-aV-6Um" firstAttribute="top" secondItem="hYF-r3-0Wv" secondAttribute="bottom" constant="20" id="TNF-bV-IWg"/>
+                            <constraint firstItem="JPD-1I-JFK" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leadingMargin" constant="50" id="Xi5-g7-5FZ"/>
+                            <constraint firstItem="hYF-r3-0Wv" firstAttribute="leading" secondItem="JPD-1I-JFK" secondAttribute="leading" id="jSV-Az-bVf"/>
+                            <constraint firstItem="Mvr-aV-6Um" firstAttribute="top" secondItem="JPD-1I-JFK" secondAttribute="bottom" constant="60" id="lmc-0j-bdP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JPD-1I-JFK" secondAttribute="trailing" constant="50" id="u8O-gm-99c"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="swipingCardsView" destination="JPD-1I-JFK" id="9h4-kl-5eP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="433"/>
+        </scene>
+    </scenes>
+</document>

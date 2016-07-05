@@ -1,0 +1,23 @@
+PODS:
+  - FBSnapshotTestCase (2.1.1):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.1)
+  - FBSnapshotTestCase/Core (2.1.1)
+  - FBSnapshotTestCase/SwiftSupport (2.1.1):
+    - FBSnapshotTestCase/Core
+  - MQSwipingCards (0.1.0)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - MQSwipingCards (from `../`)
+
+EXTERNAL SOURCES:
+  MQSwipingCards:
+    :path: ../
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: 432afd8d059ccef7f207225894840a03fbcf7474
+  MQSwipingCards: 27c293e7b6abbfdb19d35b6bde4a345d485bedd9
+
+PODFILE CHECKSUM: 1ba0fa4fd35d465715271ed213c483115895aeaa
+
+COCOAPODS: 1.0.1

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MQSwipingCards'
-  s.version          = '0.1.5'
+  s.version          = '0.2.0'
   s.summary          = 'Tinder-like swiping cards UI component'
 
   s.description      = "UI component that presents a stack of cards that you can swipe to the configured directions (left, right, up, down or any combination of those)"

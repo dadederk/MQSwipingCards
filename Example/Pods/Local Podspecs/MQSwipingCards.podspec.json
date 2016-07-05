@@ -6,7 +6,7 @@
   "homepage": "https://github.com/dadederk/MQSwipingCards",
   "license": {
     "type": "MIT",
-    "file": "../LICENSE"
+    "file": "LICENSE"
   },
   "authors": {
     "Daniel Devesa Derksen-Staats": "dadederk@gmail.com"

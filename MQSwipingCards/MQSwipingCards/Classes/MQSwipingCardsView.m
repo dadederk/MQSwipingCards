@@ -107,6 +107,8 @@
     CGFloat runUpDistance = card.frame.size.width / 5.0;
     
     switch (direction) {
+        case MQSwipingCardsViewDirectionsNone:
+            break;
         case MQSwipingCardsViewDirectionsLeft:
             cardPosition.x = cardPosition.x + runUpDistance;
             break;
@@ -132,6 +134,8 @@
     CGFloat multiplierFactor = 2.0;
     
     switch (direction) {
+        case MQSwipingCardsViewDirectionsNone:
+            break;
         case MQSwipingCardsViewDirectionsLeft:
             xVelocity = -windowBounds.size.width * multiplierFactor;
             break;
@@ -290,7 +294,7 @@
 
 - (MQSwipingCardsViewDirection)getDirectionOfTheSwipeForCard:(UIView *)card {
     
-    MQSwipingCardsViewDirection direction;
+    MQSwipingCardsViewDirection direction = MQSwipingCardsViewDirectionsNone;
     CGRect windowBounds = self.window.bounds;
     
     if (card.center.x > windowBounds.size.width) {

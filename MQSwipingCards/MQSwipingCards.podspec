@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
 
   s.homepage         = 'https://github.com/dadederk/MQSwipingCards'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  s.license          = { :type => 'MIT', :file => '../LICENSE' }
   s.author           = { 'Daniel Devesa Derksen-Staats' => 'dadederk@gmail.com' }
   s.source           = { :git => 'https://github.com/dadederk/MQSwipingCards.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/dadederk'

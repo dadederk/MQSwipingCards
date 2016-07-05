@@ -19,7 +19,8 @@ typedef NS_ENUM(NSUInteger, MQSwipingCardsViewDirection) {
     MQSwipingCardsViewDirectionsUp = (1 << 0),
     MQSwipingCardsViewDirectionsRight = (1 << 1),
     MQSwipingCardsViewDirectionsLeft = (1 << 2),
-    MQSwipingCardsViewDirectionsDown = (1 << 3)
+    MQSwipingCardsViewDirectionsDown = (1 << 3),
+    MQSwipingCardsViewDirectionsNone = (1 << 4)
 };
 
 @protocol MQSwipingCardsViewDataSource, MQSwipingCardsViewDelegate;

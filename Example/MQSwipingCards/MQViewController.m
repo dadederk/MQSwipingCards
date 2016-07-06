@@ -56,8 +56,8 @@
 
 #pragma mark - MQSwipingCardsViewDelegate
 
-- (void)swipingCardsViewDidCancelSwiping:(MQSwipingCardsView *)view {
-    NSLog(@"Cancel!");
+- (void)swipingCardsView:(MQSwipingCardsView *)view didCancelSwipingAtIndex:(NSUInteger)index {
+    NSLog(@"Canceled at index %lu!", index);
 }
 
 - (void)swipingCardsView:(MQSwipingCardsView *)view

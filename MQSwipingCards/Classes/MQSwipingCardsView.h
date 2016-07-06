@@ -47,7 +47,8 @@ typedef NS_ENUM(NSUInteger, MQSwipingCardsViewDirection) {
 
 @protocol MQSwipingCardsViewDelegate
 
-- (void)swipingCardsViewDidCancelSwiping:(MQSwipingCardsView *)view;
+- (void)swipingCardsView:(MQSwipingCardsView *)view
+ didCancelSwipingAtIndex:(NSUInteger)index;
 - (void)swipingCardsView:(MQSwipingCardsView *)view
       swipingCardAtIndex:(NSUInteger)index
             withPosition:(CGPoint)position;

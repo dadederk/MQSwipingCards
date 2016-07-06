@@ -92,8 +92,6 @@
 
 - (void)swipeCardToDirection:(MQSwipingCardsViewDirection)direction {
     
-    NSLog(@"Swipe to %lu", (unsigned long)direction);
-    
     [UIView animateWithDuration:0.4
                           delay:0.0
          usingSpringWithDamping:0.8
@@ -139,7 +137,7 @@
     CGRect windowBounds = self.window.bounds;
     CGFloat xVelocity = 0.0;
     CGFloat yVelocity = 0.0;
-    CGFloat multiplierFactor = 2.0;
+    CGFloat multiplierFactor = 3.0;
     
     switch (direction) {
         case MQSwipingCardsViewDirectionsNone:
@@ -228,7 +226,7 @@
             [weakSelf handlePushBehaviourAction];
         };
     } else {
-        [self.delegate swipingCardsViewDidCancelSwiping:self];
+        [self.delegate swipingCardsView:self didCancelSwipingAtIndex:self.index];
         [self resetCard];
     }
 }
@@ -238,7 +236,7 @@
     UIDynamicItemBehavior *cardBehavior = [[UIDynamicItemBehavior alloc] initWithItems:@[self.currentCardView]];
     cardBehavior.friction = 1.0;
     
-    NSInteger angle = arc4random_uniform(5) - 2;
+    NSInteger angle = arc4random_uniform(3);
     [cardBehavior addAngularVelocity:angle forItem:self.currentCardView];
     
     [self.animator addBehavior:cardBehavior];
@@ -289,7 +287,7 @@
             [self addPanGestureToView:[self currentCardView] withSelector:@selector(moveCard:)];
             
         } else {
-            [self.delegate swipingCardsViewDidCancelSwiping:self];
+            [self.delegate swipingCardsView:self didCancelSwipingAtIndex:self.index];
             [self resetCard];
         }
     }
@@ -333,7 +331,7 @@
             [self.attachmentBehavior setAnchorPoint:locationInView];
             [self.delegate swipingCardsView:self
                          swipingCardAtIndex:self.index
-                               withPosition:locationInView];
+                               withPosition:[self currentCardView].center];
             break;
         case UIGestureRecognizerStateEnded:
         case UIGestureRecognizerStateCancelled:

@@ -161,7 +161,7 @@
 #pragma mark - Private
 
 - (UIView *)currentCardView {
-    return self.index <  self.cardViews.count? [self.cardViews objectAtIndex:self.index] : nil;
+    return self.index <  self.cardViews.count? [self.cardViews objectAtIndex:self.index] : [self.cardViews lastObject];
 }
 
 - (void)addPanGestureToView:(UIView *)view withSelector:(SEL)selector{
